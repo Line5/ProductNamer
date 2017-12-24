@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+		<!--
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <title>ProductNamer</title>
+</head>
+
+<body class="theme-amber">
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <!--<div class="panel panel-left panel-reveal">
+        <div class="content-block">
+            <p>Left panel content goes here</p>
+        </div>
+    </div>-->
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+					<!-- Top Navbar-->
+					<div class="navbar">
+						<div class="navbar-inner">
+							<div class="center sliding">ProductNamer</div>
+							<!--<div class="right">
+								<a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+							</div>-->
+						</div>
+					</div>
+			
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+						<form>
+							<div class="list-block">
+								<ul>
+									<li>
+									  <div class="item-content">
+										<div class="item-inner">
+										  <div class="item-title label">Product</div>
+										  <div class="item-input">
+											  <input type="text" id="coreWordsInput" value="banana beer" placeholder="key words" />
+										  </div>
+										</div>
+									  </div>
+									</li>
+									<li>
+									  <div class="item-content">
+										<div class="item-inner">
+											<p><input type="submit" class="button button-big button-round button-fill" value="Go!" /></p>
+										</div>
+									  </div>
+									</li>
+								</ul>
+							</div>
+						</form>
+						<div id="myResults">
+							<div class="content-block">
+								1. Wörter eintippen<br />
+								2. "GO!" klicken
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            <div class="toolbar">
+                <div class="toolbar-inner">
+                    <!-- Toolbar links -->
+                    <a href="#" class="link">Creativity ...</a>
+                    <a href="#" class="link external">&copy; Line5</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+	<!--
+    We need the following script to include styles depending on device's OS
+    It is important to keep it as inline script or in separate JS file with this code only!
+    -->
+    <script>
+      (function () {
+        if (1 == Framework7.prototype.device.android) {
+              Dom7('head').append(
+                  '<link rel="stylesheet" href="lib/framework7/css/framework7.material.min.css">' +
+                  '<link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.min.css">' +
+				  '<link rel="stylesheet" href="css/styles.css">'
+              ); 
+          }
+          else {
+              Dom7('head').append(
+                  '<link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">' +
+                  '<link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">'
+              );
+          }
+      })();
+    </script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+</body>
+</html>
