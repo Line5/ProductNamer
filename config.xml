@@ -2,10 +2,10 @@
 <widget id="de.line5.productnamer" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ProductNamer</name>
     <description>
-        A basic Framework7 template for PhoneGap.
+        A product name generator
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="mail@line5.tv" href="http://www.line5.eu">
+        Line5 e.K.
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -18,11 +18,38 @@
     <platform name="android">
         <preference name="android-minSdkVersion" value="14" />
         <allow-intent href="market:*" />
+		<icon src="icon-ldpi.png" platform="android" qualifier="ldpi" />
+		<icon src="icon-mdpi.png" platform="android" qualifier="mdpi" />
+		<icon src="icon-hdpi.png" platform="android" qualifier="hdpi" />
+		<icon src="icon-xhdpi.png" platform="android" qualifier="xhdpi" />
+		<icon src="icon-xxhdpi.png" platform="android" qualifier="xxhdpi" />
+		<icon src="icon-xxxhdpi.png" platform="android" qualifier="xxxhdpi" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <preference name="BackupWebStorage" value="none" />
+		<!-- iPhone 6 / 6+ -->
+		<icon src="icon-60@3x.png" platform="ios" width="180" height="180" />
+
+		<!-- iPhone / iPod Touch  -->
+		<icon src="icon-60.png" platform="ios" width="60" height="60" />
+		<icon src="icon-60@2x.png" platform="ios" width="120" height="120" />
+
+		<!-- iPad -->
+		<icon src="icon-76.png" platform="ios" width="76" height="76" />
+		<icon src="icon-76@2x.png" platform="ios" width="152" height="152" />
+		<icon src="icon-83.5@2x.png" platform="ios" width="167" height="167" />
+
+		<!-- Settings Icon -->
+		<icon src="icon-small.png" platform="ios" width="29" height="29" />
+		<icon src="icon-small@2x.png" platform="ios" width="58" height="58" />
+		<icon src="icon-small@3x.png" platform="ios" width="87" height="87" />
+
+		<!-- Spotlight Icon -->
+		<icon src="icon-40.png" platform="ios" width="40" height="40" />
+		<icon src="icon-40@2x.png" platform="ios" width="80" height="80" />
+		<icon src="icon-40@3x.png" platform="ios" width="120" height="120" />
     </platform>
     <preference name="DisallowOverscroll" value="true" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
